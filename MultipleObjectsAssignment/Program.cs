@@ -1,4 +1,5 @@
 ﻿using Entities;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace ConsumesEmployees
@@ -31,7 +32,7 @@ namespace ConsumesEmployees
 
                 Employee employee = new Employee();
                 // enter employee id 
-                Console.Write("Enter the employees Id");
+                Console.Write("Enter the employees Id: ");
                 employee.empId = uint.Parse(Console.ReadLine()); // from string to unit 
 
                 // enter employees name 
@@ -62,9 +63,20 @@ namespace ConsumesEmployees
 
                 Console.WriteLine();
 
+                System.Console.Write("Do you want to continue to next employee? Yes / No: ");
+                string choice = System.Console.ReadLine();
+
+                if (!(choice == "yes" || choice == "YES" || choice == "Yes" || choice == "y" || choice == "Y"))
+                {
+                    break; // breaks from the current i et
+                }
+
+                System.Console.WriteLine("-----------------------------------"); //Separator line
+
             }
 
-
+            System.Console.WriteLine("\nThank you.");
+            System.Console.ReadKey();
 
 
         }
